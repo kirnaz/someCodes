@@ -18,8 +18,8 @@ function arrayDiff(a, b) {
 // arrayDiff([1, 2], [1]);
 // arrayDiff([1, 2, 3], [1, 3]);
 // arrayDiff([1, 2, 2, 3, 4], [2, 4]);
-arrayDiff([1, 2, 2], [1]);
-arrayDiff([1,2,2], [2]);
-arrayDiff([1,2,2], []);
-arrayDiff([], [1,2]);
-arrayDiff([1,2,3], [1,2]);
+// arrayDiff([1, 2, 2], [1]);
+// arrayDiff([1,2,2], [2]);
+// arrayDiff([1,2,2], []);
+// arrayDiff([], [1,2]);
+// arrayDiff([1,2,3], [1,2]);
