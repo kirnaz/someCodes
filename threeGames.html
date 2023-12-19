@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML5</title>
+  </head>
+  <body>
+    <script>
+      let choose;
+      alert("hi, shall we play?");
+
+      const chooseTheGame = function () {
+        choose = prompt(`Choose a game to play together:
+            1 - guess game
+            2 - counting game
+            3 - click game
+            For exit write "exit"
+            `);
+        if (choose == "1" || choose == "guess") {
+          alert("you chose the guessing game");
+          letsPlay1();
+        } else if (choose == "2" || choose == "counting game") {
+          alert("you chose the counting game");
+          letsPlay2();
+        } else if (choose == "3" || choose == "klikalka") {
+          alert("you chose the click game");
+          letsPlay3();
+        } else if (choose == "exit") {
+          confirm;
+        } else {
+          alert("bad choice, try again");
+          chooseTheGame();
+        }
+
+        return choose;
+      };
+
+      const letsPlay1 = function () {
+        alert("the game starts");
+        alert("guess game");
+        alert("I will guess the number from 1 to 100. Your task is to guess");
+        const unknowNumber = Math.floor(Math.random() * 101);
+        let number;
+        let times = 0;
+        do {
+          number = prompt("try to guess");
+          if (number > unknowNumber) {
+            alert("less");
+            times += 1;
+          } else if (number < unknowNumber) {
+            alert("more");
+            times += 1;
+          } else if (number == unknowNumber) {
+            alert("you guessed");
+            times += 1;
+          } else {
+            alert("bad input, try again");
+          }
+        } while (number != unknowNumber);
+        alert(`number of attempts ${times}`);
+        chooseTheGame();
+      };
+
+      const letsPlay2 = function () {
+        alert("the game starts");
+        alert("counting game");
+        alert("you will have 5 examples, you must solve them.");
+
+        let a, b, znak, times, answer, txtAnswer, corect;
+        times = 1;
+        txtAnsvew = "";
+        corect = 0;
+
+        do {
+          // console.log(`${corect} number of correct attempts`);
+          a = Math.floor(Math.random() * 11);
+          b = Math.floor(Math.random() * 11);
+          znak = Math.floor(Math.random() * 3) + 1;
+          if (znak == 1) {
+            answer = a + b;
+            txtAnswer = prompt(`${a} + ${b}, what answer?`);
+          } else if (znak == 2) {
+            answer = a - b;
+            txtAnswer = prompt(`${a} - ${b}, what answer?`);
+          } else if (znak == 3) {
+            answer = a * b;
+            txtAnswer = prompt(`${a} * ${b}, what answer?`);
+          }
+          if (answer == txtAnswer) {
+            corect += 1;
+          }
+          corect += 0;
+          times += 1;
+        } while (times < 6);
+
+        alert(`number of correct solutions ${corect}`);
+        chooseTheGame();
+      };
+
+      const letsPlay3 = function () {
+        alert("the game starts");
+        alert("click game");
+        alert(
+          "depending on the task you must click OK or Cancel 10 times"
+        );
+
+        let window, count, corect;
+
+        count = 1;
+        corect = 0;
+
+        do {
+          window = Math.floor(Math.random() * 3) + 1;
+          if (window == 1) {
+            alert("Click OK");
+            corect += 1;
+          } else if (window == 2) {
+            if (confirm("Click Cancel") == false) {
+              corect += 1;
+            }
+          } else if (window == 3) {
+            if (confirm("Click OK") == true) {
+              corect += 1;
+            }
+          }
+
+          count += 1;
+        } while (count < 11);
+
+        alert(`number of correct clicks ${corect}`);
+        chooseTheGame();
+      };
+
+      chooseTheGame();
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
